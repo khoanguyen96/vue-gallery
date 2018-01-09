@@ -16,9 +16,7 @@
 </template>
 
 <script>
-  import 'blueimp-gallery/css/blueimp-gallery.min.css';
-  import 'blueimp-gallery/js/blueimp-gallery-fullscreen.js';
-  import blueimp from 'blueimp-gallery/js/blueimp-gallery.js';
+  import blueimp from 'blueimp-gallery';
 
   export default {
     props: {

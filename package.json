@@ -39,7 +39,7 @@
     "vue-component"
   ],
   "dependencies": {
-    "blueimp-gallery": "^2.27.0"
+    "blueimp-gallery": "git://github.com/khoanguyen96/Gallery.git#rewrite-js"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
