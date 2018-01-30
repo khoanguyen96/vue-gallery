@@ -12,11 +12,14 @@ export default {
       externalHelpers: false,
       exclude: 'node_modules/**',
     }),
-    (process.env.NODE_ENV === 'production' && uglify())
+    (process.env.NODE_ENV === 'production' && uglify()),
   ],
   output: {
     file: process.env.NODE_ENV === 'production' ? 'dist/js/vue-gallery.min.js' : 'dist/js/vue-gallery.js',
     format: 'umd',
     name: 'VueGallery',
-  }
+    globals: {
+      'blueimp-gallery': 'blueimp',
+    },
+  },
 };
