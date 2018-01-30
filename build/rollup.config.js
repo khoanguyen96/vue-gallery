@@ -1,10 +1,12 @@
 import vue from 'rollup-plugin-vue';
 import babel from 'rollup-plugin-babel';
+import resolve from 'rollup-plugin-node-resolve';
 import uglify from 'rollup-plugin-uglify';
 
 export default {
   input: 'src/index.js',
   plugins: [
+    resolve(),
     vue(),
     babel({
       babelrc: true,
@@ -12,14 +14,14 @@ export default {
       externalHelpers: false,
       exclude: 'node_modules/**',
     }),
-    (process.env.NODE_ENV === 'production' && uglify()),
+    uglify(),
   ],
   output: {
-    file: process.env.NODE_ENV === 'production' ? 'dist/js/vue-gallery.min.js' : 'dist/js/vue-gallery.js',
+    file: 'dist/js/vue-gallery.min.js',
     format: 'umd',
     name: 'VueGallery',
     globals: {
-      'blueimp-gallery': 'blueimp',
+      '@khoanguyen96/blueimp-gallery': 'blueimp',
     },
   },
 };

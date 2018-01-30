@@ -2,13 +2,12 @@
   "name": "vue-gallery",
   "version": "1.2.5",
   "description": "VueJS responsive and customizable image and video gallery, carousel and lightbox, optimized for both mobile and desktop web browsers.",
-  "main": "dist/js/vue-gallery.js",
-  "jsnext:main": "src/index.js",
+  "main": "dist/js/vue-gallery.min.js",
   "unpkg": "dist/js/vue-gallery.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "node_modules/.bin/eslint ./",
-    "build": "node_modules/.bin/rollup -c ./build/rollup.config.js && NODE_ENV=production node_modules/.bin/rollup -c ./build/rollup.config.js",
+    "build": "node_modules/.bin/rollup -c ./build/rollup.config.js",
     "patch": "npm version patch",
     "minor": "npm version minor",
     "major": "npm version major"
@@ -39,7 +38,7 @@
     "vue-component"
   ],
   "dependencies": {
-    "blueimp-gallery": "git://github.com/khoanguyen96/Gallery.git"
+    "@khoanguyen96/blueimp-gallery": "git+https://github.com/khoanguyen96/Gallery.git"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -52,6 +51,7 @@
     "eslint": "^4.6.1",
     "rollup": "^0.53.3",
     "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-node-resolve": "^3.0.2",
     "rollup-plugin-uglify": "^2.0.1",
     "rollup-plugin-vue": "^3.0.0",
     "vue-template-compiler": "^2.5.4"
