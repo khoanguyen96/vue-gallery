@@ -1,12 +1,8 @@
 <html>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <script type="text/javascript" src="https://unpkg.com/vue@2.4.3/dist/vue.js"></script>
-  <script type="text/javascript" src="https://unpkg.com/blueimp-gallery@2.27.0/js/blueimp-helper.js"></script>
-  <script type="text/javascript" src="https://unpkg.com/blueimp-gallery@2.27.0/js/blueimp-gallery.js"></script>
-  <script type="text/javascript" src="https://unpkg.com/blueimp-gallery@2.27.0/js/blueimp-gallery-fullscreen.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://unpkg.com/blueimp-gallery@2.27.0/css/blueimp-gallery.min.css">
-  <script type="text/javascript" src="../dist/js/vue-gallery.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/vue@2.5/dist/vue.js"></script>
+  <script type="text/javascript" src="../dist/js/vue-gallery.min.js"></script>
   <title>Vue Gallery</title>
 </head>
 
@@ -24,7 +20,7 @@
 </style>
 
 <div id="app">
-  <gallery :images="images" :index="index" @close="index = null"></gallery>
+  <vue-gallery :images="images" :index="index" @close="index = null"></vue-gallery>
   <div
     class="image"
     v-for="image, imageIndex in images"

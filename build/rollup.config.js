@@ -1,20 +1,22 @@
+import resolve from 'rollup-plugin-node-resolve';
+import postcss from 'rollup-plugin-postcss';
 import vue from 'rollup-plugin-vue';
 import babel from 'rollup-plugin-babel';
-import resolve from 'rollup-plugin-node-resolve';
 import uglify from 'rollup-plugin-uglify';
 
 export default {
   input: 'src/index.js',
   plugins: [
+    vue({ css: false }),
     resolve(),
-    vue(),
     babel({
       babelrc: true,
       runtimeHelpers: true,
       externalHelpers: false,
       exclude: 'node_modules/**',
     }),
-    uglify(),
+    postcss({ plugins: [] }),
+    // uglify(),
   ],
   output: {
     file: 'dist/js/vue-gallery.min.js',
