@@ -16,7 +16,7 @@ export default {
       exclude: 'node_modules/**',
     }),
     postcss({ plugins: [] }),
-    // uglify(),
+    uglify(),
   ],
   output: {
     file: 'dist/js/vue-gallery.min.js',
