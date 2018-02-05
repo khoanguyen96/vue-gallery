@@ -1,8 +1,17 @@
 import resolve from 'rollup-plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
+import imageInliner from 'postcss-image-inliner';
 import vue from 'rollup-plugin-vue';
 import babel from 'rollup-plugin-babel';
 import uglify from 'rollup-plugin-uglify';
+
+const inliner = imageInliner({
+  assetPaths: [
+    '../node_modules/@khoanguyen96/blueimp-gallery/dist/img',
+  ],
+  maxFileSize: 10240,
+  b64Svg: true,
+});
 
 export default {
   input: 'src/index.js',
@@ -15,7 +24,7 @@ export default {
       externalHelpers: false,
       exclude: 'node_modules/**',
     }),
-    postcss({ plugins: [] }),
+    postcss({ plugins: [ inliner ] }),
     uglify(),
   ],
   output: {
