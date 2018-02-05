@@ -16,7 +16,6 @@
 </template>
 
 <script>
-  import '@khoanguyen96/blueimp-gallery/dist/css/blueimp-gallery.min.css';
   import blueimp from '@khoanguyen96/blueimp-gallery';
 
   export default {
